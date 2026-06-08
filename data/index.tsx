@@ -220,7 +220,7 @@ export const PORTFOLIO_DATA = {
       description: "An automated frontend evaluation system leveraging pixel-based rendering and the Gemini API for intelligent scoring.",
       features: ["Pixel-Based Rendering", "Automated UI Comparison", "Intelligent Scoring"],
       stack: ["Node.js", "Puppeteer", "Gemini API"],
-      github: "https://github.com/pranav-1906/Amypo_PRISM", // UPDATE THESE LINKS
+      github: "https://github.com/Ram-1922/Amypo_PRISM", // UPDATE THESE LINKS
       live: "#"
     }
   ],
