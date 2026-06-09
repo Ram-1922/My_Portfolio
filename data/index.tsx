@@ -107,7 +107,7 @@ export const ACHIEVEMENTS_DATA = [
     title: "1st Place – TECHNOVIBES",
     subtitle: "FoodLink – Surplus Food Platform",
     icon: <Trophy size={22} className="text-sky-500" />,
-    badge: "🥇 1st Prize",
+    badge: "1st Prize",
     points: [
       "Secured 1st Prize at TECHNOVIBES Hackathon.",
       "Developed FoodLink to connect surplus food with those in need.",
@@ -119,7 +119,7 @@ export const ACHIEVEMENTS_DATA = [
     title: "Runner-Up – National Hackathon",
     subtitle: "PRISM – Intelligent Code Evaluation",
     icon: <Medal size={22} className="text-sky-500" />,
-    badge: "🥈 Runner-Up",
+    badge: "Runner-Up",
     points: [
       "Runner-Up in a 24-Hour National-Level Hackathon.",
       "Built PRISM, an automated HTML/CSS/JS code evaluation tool.",
@@ -128,22 +128,10 @@ export const ACHIEVEMENTS_DATA = [
     tags: ["24-Hour", "AI/ML"]
   },
   {
-    title: "Winner – Pixel Decode",
-    subtitle: "CRYPTERA 2026",
-    icon: <Award size={22} className="text-sky-500" />,
-    badge: "🥇 1st Place",
-    points: [
-      "1st Place in Pixel Decode pattern-recognition challenge.",
-      "Solved advanced logical and algorithmic puzzles.",
-      "Demonstrated strong analytical and problem-solving skills."
-    ],
-    tags: ["Logic", "Algorithms"]
-  },
-  {
     title: "Technical Champion",
     subtitle: "Multiple Competitions",
     icon: <CheckCircle size={22} className="text-sky-500" />,
-    badge: "🏆 Champion",
+    badge: "Champion",
     points: [
       "Won multiple CS and technology-based competitions.",
       "Consistent top performer in technical innovation challenges."
@@ -154,7 +142,7 @@ export const ACHIEVEMENTS_DATA = [
     title: "Hackathons & Innovation",
     subtitle: "Continuous Participation",
     icon: <Rocket size={22} className="text-sky-500" />,
-    badge: "🚀 5+ Events",
+    badge: "5+ Events",
     points: [
       "Participated in 5+ multi-domain Hackathons.",
       "Built solutions spanning AI, Web Dev, and UI/UX."
@@ -165,7 +153,7 @@ export const ACHIEVEMENTS_DATA = [
     title: "Certifications",
     subtitle: "NPTEL & Industry Courses",
     icon: <FileBadge size={22} className="text-sky-500" />,
-    badge: "📜 Certified",
+    badge: "Certified",
     points: [
       "Completed NPTEL technology certifications.",
       "Pursuing industry-recognized courses for continuous learning."
