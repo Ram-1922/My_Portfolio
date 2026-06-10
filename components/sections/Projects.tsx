@@ -42,19 +42,23 @@ export default function Projects() {
             className="static lg:sticky shadow-xl dark:shadow-black/80 rounded-[2rem] lg:rounded-[3rem] z-10"
             style={{ top: `calc(8rem + ${idx * 2.5}rem)` }}
           >
-            {/* THE FIX: Added lg:h-[600px] to force uniform height so the sticky math works perfectly at the end of the scroll */}
-            <div className="bg-white/95 dark:bg-[#08080a] backdrop-blur-2xl border border-[#0fbcff]/20 dark:border-white/10 rounded-[2rem] lg:rounded-[3rem] p-8 lg:p-14 flex flex-col justify-between group relative w-full lg:h-[600px] overflow-hidden transition-all duration-500 hover:border-[#0fbcff] dark:hover:border-[#0fbcff]/50">
+            {/* Reduced padding to p-10 to fit content inside the height without scrolling */}
+            <div className="bg-white/95 dark:bg-[#08080a] backdrop-blur-2xl border border-[#0fbcff]/20 dark:border-white/10 rounded-[2rem] lg:rounded-[3rem] p-8 lg:p-10 flex flex-col justify-between group relative w-full lg:h-[580px] overflow-hidden transition-all duration-500 hover:border-[#0fbcff] dark:hover:border-[#0fbcff]/50">
               
               <div className="absolute top-0 right-0 w-64 h-64 lg:w-80 lg:h-80 bg-gradient-to-br from-[#0fbcff]/40 to-[#0fbcff]/30 dark:from-[#0fbcff]/15 dark:to-[#0fbcff]/15 rounded-full blur-[80px] lg:blur-[100px] group-hover:scale-125 transition-transform duration-700 -z-10" />
 
-              {/* Added overflow-y-auto so text doesn't break the fixed height */}
-              <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar mb-6">
-                <h3 className="text-2xl sm:text-3xl lg:text-5xl font-heading font-bold mb-4 text-slate-900 dark:text-white group-hover:text-[#0fbcff] transition-colors">{project.title}</h3>
-                <p className="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-gray-300 mb-8 lg:mb-10 leading-relaxed max-w-3xl font-medium">{project.description}</p>
+              {/* Removed overflow-y-auto and custom-scrollbar, tightened margins */}
+              <div className="flex flex-col">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold mb-3 text-slate-900 dark:text-white group-hover:text-[#0fbcff] transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-gray-300 mb-6 leading-relaxed max-w-3xl font-medium">
+                  {project.description}
+                </p>
                 
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-2">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
                   {project.features.map((feature, fIdx) => (
-                    <li key={fIdx} className="flex items-start lg:items-center text-sm sm:text-base lg:text-lg text-slate-700 dark:text-gray-300 gap-3 font-medium bg-[#0fbcff]/10 dark:bg-white/5 p-4 rounded-2xl border border-[#0fbcff]/20 dark:border-white/5">
+                    <li key={fIdx} className="flex items-start lg:items-center text-sm lg:text-base text-slate-700 dark:text-gray-300 gap-3 font-medium bg-[#0fbcff]/10 dark:bg-white/5 p-3 rounded-2xl border border-[#0fbcff]/20 dark:border-white/5">
                       <span className="w-2.5 h-2.5 mt-1 lg:mt-0 shrink-0 rounded-full bg-[#0fbcff] shadow-[0_0_10px_rgba(15,188,255,0.8)]" /> 
                       {feature}
                     </li>
@@ -63,21 +67,21 @@ export default function Projects() {
               </div>
 
               {/* Bottom Buttons - forced to the bottom using mt-auto */}
-              <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6 pt-6 lg:pt-8 border-t border-[#0fbcff]/20 dark:border-white/10 mt-auto shrink-0">
+              <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6 pt-5 border-t border-[#0fbcff]/20 dark:border-white/10 mt-auto shrink-0">
                 <div className="flex flex-wrap gap-2 lg:gap-3">
                   {project.stack.map((tech, tIdx) => (
-                    <span key={tIdx} className="font-mono text-xs lg:text-sm font-bold px-3 py-1.5 lg:px-4 lg:py-2 bg-[#0fbcff]/10 text-[#0fbcff] rounded-xl border border-[#0fbcff]/20">
+                    <span key={tIdx} className="font-mono text-xs font-bold px-3 py-1.5 lg:px-4 lg:py-2 bg-[#0fbcff]/10 text-[#0fbcff] rounded-xl border border-[#0fbcff]/20">
                       {tech}
                     </span>
                   ))}
                 </div>
                 
-                <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-                  <a href={project.github || "#"} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white font-bold hover:bg-slate-200 transition-colors w-full sm:w-auto">
-                    <GithubIcon size={20} /> Code
+                <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+                  <a href={project.github || "#"} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white font-bold hover:bg-slate-200 transition-colors w-full sm:w-auto">
+                    <GithubIcon size={18} /> Code
                   </a>
-                  <a href={project.live || "#"} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0fbcff] text-white font-bold hover:bg-[#0fbcff]/80 transition-colors shadow-lg shadow-[#0fbcff]/30 w-full sm:w-auto">
-                    <ExternalLink size={20} /> Live
+                  <a href={project.live || "#"} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-[#0fbcff] text-white font-bold hover:bg-[#0fbcff]/80 transition-colors shadow-lg shadow-[#0fbcff]/30 w-full sm:w-auto">
+                    <ExternalLink size={18} /> Live
                   </a>
                 </div>
               </div>
