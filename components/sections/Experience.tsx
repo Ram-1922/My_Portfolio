@@ -2,7 +2,20 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring, Variants } from "framer-motion";
-import { EXPERIENCE_DATA } from "@/data";
+import { EXPERIENCE_DATA} from "@/data";
+
+// Automated color mapping for Experience
+const DOT_COLORS = [
+  "bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.8)]",
+  "bg-sky-500 shadow-[0_0_10px_rgba(14,165,233,0.8)]",
+  "bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]",
+];
+
+const TEXT_COLORS = [
+  "text-purple-500 dark:text-purple-400",
+  "text-sky-500 dark:text-sky-400",
+  "text-emerald-500 dark:text-emerald-400",
+];
 
 export default function Experience() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -32,7 +45,6 @@ export default function Experience() {
         
         <div className="lg:col-span-4 h-full relative">
           <div className="static lg:sticky top-20 md:top-24 lg:top-28 xl:top-32 flex flex-col items-center lg:items-start text-center lg:text-left mb-2 sm:mb-4 lg:mb-0">
-            {/* THE FIX: Scaled down heading sizes from text-7xl */}
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-heading font-black text-slate-900 dark:text-white flex items-center gap-2 sm:gap-3 md:gap-4 mb-1 sm:mb-2">
               Experience
             </h2>
@@ -65,13 +77,15 @@ export default function Experience() {
                 variants={slideUp} 
                 className="relative pl-5 sm:pl-6 md:pl-8 lg:pl-10 xl:pl-12"
               >
-                <div className={`absolute left-[-2px] sm:left-[-1px] md:left-0 top-[3px] sm:top-[4px] md:top-[6px] w-2 h-2 sm:w-3 h-3 md:w-4 md:h-4 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.8)] border-2 border-white dark:border-[#0a0a0a] z-10`} />
+                {/* Dynamically assigned dot color */}
+                <div className={`absolute left-[-2px] sm:left-[-1px] md:left-0 top-[3px] sm:top-[4px] md:top-[6px] w-2 h-2 sm:w-3 h-3 md:w-4 md:h-4 rounded-full ${DOT_COLORS[idx % DOT_COLORS.length]} border-2 border-white dark:border-[#0a0a0a] z-10`} />
                 
                 <div className="bg-transparent">
                   <h3 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
                     {item.role}
                   </h3>
-                  <p className={`text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg font-medium mt-0.5 sm:mt-1 mb-1 sm:mb-2 md:mb-3 lg:mb-4 text-purple-500 dark:text-purple-400`}>
+                  {/* Dynamically assigned text color */}
+                  <p className={`text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg font-medium mt-0.5 sm:mt-1 mb-1 sm:mb-2 md:mb-3 lg:mb-4 ${TEXT_COLORS[idx % TEXT_COLORS.length]}`}>
                     {item.company}
                   </p>
                   
