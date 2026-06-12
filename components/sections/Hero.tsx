@@ -86,7 +86,7 @@ export default function Hero() {
             </motion.div>
             <motion.div 
               variants={{
-                idle: { x: 25, y:10, opacity: 0.6, textShadow: resolvedTheme === 'dark' ? "0 0 10px rgba(59,130,246,0.4)" : "none" },
+                idle: { x: 55, y:10, opacity: 0.6, textShadow: resolvedTheme === 'dark' ? "0 0 10px rgba(59,130,246,0.4)" : "none" },
                 hover: { x: 10, opacity: 1, textShadow: "0 0 20px rgba(59,130,246,0.8)", scale: 1.1 }
               }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}

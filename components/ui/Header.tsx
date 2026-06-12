@@ -8,21 +8,37 @@ import { ScrollProgress } from "@/components/ui/scroll-progress";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showHeader, setShowHeader] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScrollAndResize = () => {
       const currentScrollY = window.scrollY;
+      const currentWidth = window.innerWidth;
+      
       setIsScrolled(currentScrollY > 50);
-      const threshold = window.innerHeight * 1.5;
-      if (currentScrollY > threshold) {
-        setShowHeader(true); 
+      
+      // If screen is smaller than 1024px (mobile/tablet), show header instantly
+      if (currentWidth < 1024) {
+        setIsMobile(true);
+        setShowHeader(true);
       } else {
-        setShowHeader(false); 
+        // Desktop: wait for the Macbook scroll effect to finish before dropping header
+        setIsMobile(false);
+        const threshold = window.innerHeight * 1.5;
+        setShowHeader(currentScrollY > threshold);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Run immediately on mount to set the correct state instantly
+    handleScrollAndResize();
+
+    window.addEventListener("scroll", handleScrollAndResize);
+    window.addEventListener("resize", handleScrollAndResize);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScrollAndResize);
+      window.removeEventListener("resize", handleScrollAndResize);
+    };
   }, []);
 
   const scrollTo = (id: string) => {
@@ -36,9 +52,10 @@ export default function Header() {
     <AnimatePresence>
       {showHeader && (
         <motion.header 
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
-          exit={{ y: -100 }}
+          // If mobile, it just appears. If desktop, it drops down from the top smoothly.
+          initial={isMobile ? { y: 0, opacity: 0 } : { y: -100 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -100, opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className={`fixed top-0 left-0 right-0 z-[100] transition-colors duration-300 ${
             isScrolled 
