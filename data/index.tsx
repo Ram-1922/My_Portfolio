@@ -18,7 +18,7 @@ export const MARQUEE_TECH = [
 
 // 3. SKILLS FALLBACKS
 export const SKILLS_DBMS = ["PostgreSQL", "MongoDB", "MySQL"];
-export const SKILLS_TOOLS = ["Git", "GitHub", "VS Code", "Docker", "Vercel"];
+export const SKILLS_TOOLS = ["Git", "GitHub", "VS Code", "Docker", "Render"];
 
 // 4. EDUCATION DATA
 export const EDUCATION_DATA = [
