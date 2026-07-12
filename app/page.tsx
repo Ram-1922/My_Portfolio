@@ -69,7 +69,6 @@ export default function Home() {
           {/* RESPONSIVE FOOTER */}
           <footer className="w-full text-center py-10 lg:py-12 px-6 text-xs sm:text-sm text-slate-500 border-t border-black/10 dark:border-white/5 mt-16 lg:mt-20 transition-colors duration-500 flex flex-col gap-2">
             <p>Engineered with Next.js, Framer Motion & Tailwind CSS.</p>
-            <p>© {new Date().getFullYear()} Sri Ram M. All rights reserved.</p>
           </footer>
         </div>
         

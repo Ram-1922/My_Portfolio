@@ -209,7 +209,7 @@ export const PORTFOLIO_DATA = {
       features: ["Pixel-Based Rendering", "Automated UI Comparison", "Intelligent Scoring"],
       stack: ["Node.js", "Puppeteer", "Gemini API"],
       github: "https://github.com/Ram-1922/Amypo_PRISM", // UPDATE THESE LINKS
-      live: "#"
+      live: ""
     }
   ],
   contact: {
