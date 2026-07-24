@@ -26,7 +26,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Deva Veera Kumaran S. | Portfolio",
+  title: "Sri Ram M. | Portfolio",
   description: "Full-Stack Developer, AI Enthusiast & Software Engineer",
 };
 

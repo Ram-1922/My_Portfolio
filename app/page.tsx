@@ -21,10 +21,10 @@ export default function Home() {
       <div className="fixed inset-0 z-0 pointer-events-none transform-gpu">
         <FlickeringGrid
           className="absolute inset-0 w-full h-full [mask-image:radial-gradient(ellipse_at_center,white,transparent_80%)]"
-          squareSize={12}
-          gridGap={12}
+          squareSize={6}
+          gridGap={8}
           color="#60A5FA"
-          maxOpacity={0.15}
+          maxOpacity={0.18}
           flickerChance={0.2}
         />
       </div>
