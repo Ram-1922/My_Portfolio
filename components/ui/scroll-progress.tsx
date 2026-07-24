@@ -1,7 +1,6 @@
 "use client"
 
 import { motion, useScroll, type MotionProps } from "motion/react"
-
 import { cn } from "@/lib/utils"
 
 interface ScrollProgressProps extends Omit<
@@ -22,7 +21,8 @@ export function ScrollProgress({
     <motion.div
       ref={ref}
       className={cn(
-        "fixed inset-x-0 top-0 z-50 h-px origin-left bg-linear-to-r from-[#0fbcff] via-[#00bc7d] to-[#993fe8]",
+        // FIXED: Pinned absolutely to the top of the browser window with high z-index
+        "fixed inset-x-0 top-0 z-[200] h-[3px] origin-left bg-gradient-to-r from-blue-500 via-sky-400 to-purple-500",
         className
       )}
       style={{

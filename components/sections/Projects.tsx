@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { PORTFOLIO_DATA } from "@/data";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Server, GitBranch } from "lucide-react";
 
 const GithubIcon = ({ className = "w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" }: { className?: string }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -72,26 +72,39 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-1.5 sm:gap-2 md:gap-3 shrink-0">
-                  <a href={project.github || "#"} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1 sm:gap-1.5 md:gap-2 px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-md sm:rounded-lg md:rounded-xl bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white font-bold text-[9px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base hover:bg-slate-200 transition-colors w-full sm:w-auto">
-                    <GithubIcon /> Code
-                  </a>
-                  <a
-                    href={project.live || "#"}
-                    target={project.live ? "_blank" : undefined}
-                    rel={project.live ? "noopener noreferrer" : undefined}
-                    onClick={(e) => {
-                      if (!project.live) {
-                        e.preventDefault();
-                        alert("Will be deployed soon...");
-                      }
-                    }}
-                    className="flex items-center justify-center gap-1 sm:gap-1.5 md:gap-2 px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-md sm:rounded-lg md:rounded-xl bg-[#0fbcff] text-white font-bold text-[9px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base hover:bg-[#0fbcff]/80 transition-colors shadow-lg shadow-[#0fbcff]/30 w-full sm:w-auto"
+                {/* ================================================= */}
+                {/* UPGRADED CS PROJECT BUTTONS                       */}
+                {/* ================================================= */}
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 shrink-0 mt-3 sm:mt-0">
+                  
+                  {/* SOURCE CODE: Git Branch Style */}
+                  <a 
+                    href={project.github || "#"} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="group flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-md bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/30 text-purple-700 dark:text-purple-400 font-mono text-[9px] sm:text-[10px] md:text-xs font-bold hover:bg-purple-100 dark:hover:bg-purple-500/20 hover:border-purple-300 dark:hover:border-purple-500/50 transition-all shadow-[0_0_15px_rgba(168,85,247,0.05)] w-full sm:w-auto"
                   >
-                    <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                    Live
+                    <GitBranch className="w-3 h-3 sm:w-4 sm:h-4 text-purple-500 dark:text-purple-400 group-hover:text-purple-800 dark:group-hover:text-purple-300 transition-colors" /> 
+                    <span>src_code</span>
+                  </a>
+
+                  {/* LIVE DEPLOYMENT: Production Server Status Style */}
+                  <a 
+                    href={project.live || "#"} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="group relative flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-md bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 text-blue-600 dark:text-blue-400 font-mono text-[9px] sm:text-[10px] md:text-xs font-bold hover:bg-blue-100 dark:hover:bg-blue-500/20 hover:border-blue-300 dark:hover:border-blue-500/50 transition-all shadow-[0_0_15px_rgba(59,130,246,0.15)] w-full sm:w-auto overflow-hidden"
+                  >
+                    {/* Blinking Server Status Dot */}
+                    <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-blue-500"></span>
+                    </span>
+                    
+                    <span className="relative z-10">Live</span>
                   </a>
                 </div>
+                {/* ================================================= */}
               </div>
 
             </div>

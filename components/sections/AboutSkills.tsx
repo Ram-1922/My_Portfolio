@@ -5,6 +5,59 @@ import { PORTFOLIO_DATA } from "@/data";
 import { BrainCircuit, Code2, Database, Sparkles, Flame, Server, HardDrive, Terminal } from "lucide-react";
 import { MagicContainer, MagicCard } from "@/components/ui/MagicBento";
 
+// ==========================================
+// NEW: NEURAL NODE NETWORK BACKGROUND
+// ==========================================
+const NeuralNetworkBg = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none -z-20 opacity-40 dark:opacity-20 flex items-center justify-center">
+      <motion.svg 
+        viewBox="0 0 800 600" 
+        className="w-full h-full max-w-[1200px]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+      >
+        {/* Animated Connecting Lines */}
+        <motion.path 
+          d="M 200,150 L 400,250 L 600,150 L 500,400 L 300,400 Z M 400,250 L 400,400 M 200,150 L 300,400 M 600,150 L 500,400" 
+          stroke="currentColor" 
+          strokeWidth="1.5" 
+          fill="none" 
+          className="text-purple-500/30"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: [0, 1, 1, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        />
+        
+        {/* Pulsing Nodes */}
+        {[
+          { cx: 200, cy: 150, delay: 0 },
+          { cx: 400, cy: 250, delay: 1 },
+          { cx: 600, cy: 150, delay: 2 },
+          { cx: 500, cy: 400, delay: 3 },
+          { cx: 300, cy: 400, delay: 4 },
+          { cx: 400, cy: 400, delay: 5 },
+        ].map((node, i) => (
+          <motion.circle 
+            key={i}
+            cx={node.cx} 
+            cy={node.cy} 
+            r="6" 
+            className="fill-purple-500"
+            animate={{ 
+              scale: [1, 1.5, 1],
+              opacity: [0.5, 1, 0.5],
+              filter: ["blur(0px)", "blur(4px)", "blur(0px)"]
+            }}
+            transition={{ duration: 4, delay: node.delay, repeat: Infinity, ease: "easeInOut" }}
+          />
+        ))}
+      </motion.svg>
+    </div>
+  );
+};
+
 const GetSkillIcon = ({ name }: { name: string }) => {
   const n = name.toLowerCase();
   if (n.includes('react') || n.includes('next') || n.includes('tailwind') || n.includes('css') || n.includes('html')) 
@@ -33,10 +86,15 @@ export default function AboutSkills() {
   };
 
   return (
-    <section id="skills" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 w-[95%] sm:w-[90%] md:w-[85%] lg:w-[75%] mx-auto overflow-hidden">
+    <section id="skills" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 w-[95%] sm:w-[90%] md:w-[85%] lg:w-[75%] mx-auto overflow-hidden relative">
+      
+      {/* Neural Background rendered behind the Magic Container */}
+      <NeuralNetworkBg />
+
       <MagicContainer 
-        className="grid grid-cols-1 lg:grid-cols-6 lg:grid-rows-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6 h-auto lg:h-[700px] xl:h-[900px]" 
-        enableSpotlight={true} glowColor="168, 85, 247"
+        className="grid grid-cols-1 lg:grid-cols-6 lg:grid-rows-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6 h-auto lg:h-[700px] xl:h-[900px] relative z-10" 
+        enableSpotlight={true} 
+        glowColor="168, 85, 247"
       >
         
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={slideFromLeft} className="lg:col-span-3 lg:row-span-2 h-full">

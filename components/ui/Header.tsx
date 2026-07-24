@@ -1,44 +1,66 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import { motion } from "framer-motion";
+import TerminalToggle from "@/components/ui/TerminalToggle";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
+
+const NAV_LINKS = [
+  { name: "About Me", id: "skills" },
+  { name: "Projects", id: "projects" },
+  { name: "Background", id: "education" },
+  { name: "Achievements", id: "achievements" },
+];
+
+// ==========================================
+// NEW: EXECUTABLE CONTACT BUTTON
+// ==========================================
+const ContactButton = ({ scrollTo }: { scrollTo: (id: string) => void }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.button
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      onClick={() => scrollTo("resume-contact")}
+      className="relative px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-black font-mono text-[10px] sm:text-xs font-bold transition-all hover:scale-105 active:scale-95 flex items-center gap-2 overflow-hidden border border-transparent dark:hover:border-sky-500 hover:border-sky-400 shadow-[0_0_15px_rgba(14,165,233,0.15)]"
+    >
+      {/* Blinking System Node */}
+      <motion.span 
+        animate={{ opacity: [1, 0.4, 1] }} 
+        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }} 
+        className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-sky-400 dark:bg-sky-500 shadow-[0_0_8px_rgba(56,189,248,0.8)]"
+      />
+      
+      {/* Dynamic Terminal Text */}
+      <span className="relative z-10 tracking-widest uppercase w-[60px] sm:w-[75px] text-center inline-block">
+        {isHovered ? (
+          <span className="text-sky-400 dark:text-sky-600">./CONN</span>
+        ) : (
+          "CONTACT"
+        )}
+      </span>
+
+      {/* Sweeping Scanner Laser on Hover */}
+      <motion.div
+        initial={{ x: "-150%" }}
+        animate={{ x: isHovered ? "150%" : "-150%" }}
+        transition={{ duration: 0.7, ease: "linear", repeat: isHovered ? Infinity : 0 }}
+        className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 dark:via-black/20 to-transparent skew-x-12 z-0"
+      />
+    </motion.button>
+  );
+};
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showHeader, setShowHeader] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   useEffect(() => {
-    const handleScrollAndResize = () => {
-      const currentScrollY = window.scrollY;
-      const currentWidth = window.innerWidth;
-      
-      setIsScrolled(currentScrollY > 50);
-      
-      // If screen is smaller than 1024px (mobile/tablet), show header instantly
-      if (currentWidth < 1024) {
-        setIsMobile(true);
-        setShowHeader(true);
-      } else {
-        // Desktop: wait for the Macbook scroll effect to finish before dropping header
-        setIsMobile(false);
-        const threshold = window.innerHeight * 1.5;
-        setShowHeader(currentScrollY > threshold);
-      }
-    };
-
-    // Run immediately on mount to set the correct state instantly
-    handleScrollAndResize();
-
-    window.addEventListener("scroll", handleScrollAndResize);
-    window.addEventListener("resize", handleScrollAndResize);
-    
-    return () => {
-      window.removeEventListener("scroll", handleScrollAndResize);
-      window.removeEventListener("resize", handleScrollAndResize);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollTo = (id: string) => {
@@ -48,65 +70,60 @@ export default function Header() {
     }
   };
 
+  const headerBg = isScrolled 
+    ? "bg-white/90 dark:bg-[#0a0a0c]/90 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.5)] py-3 sm:py-4 border-slate-200/50 dark:border-white/10 border" 
+    : "bg-transparent py-5 sm:py-8 border-transparent border shadow-none";
+
   return (
-    <AnimatePresence>
-      {showHeader && (
-        <motion.header 
-          // If mobile, it just appears. If desktop, it drops down from the top smoothly.
-          initial={isMobile ? { y: 0, opacity: 0 } : { y: -100 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -100, opacity: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className={`fixed top-0 left-0 right-0 z-[100] transition-colors duration-300 ${
-            isScrolled 
-              ? "bg-white/90 dark:bg-[#030305]/90 backdrop-blur-xl border-b border-slate-200 dark:border-white/10 py-2 sm:py-3 md:py-4 shadow-sm" 
-              : "bg-transparent py-4 sm:py-6"
-          }`}
+    <>
+      <header className="fixed top-0 left-0 right-0 z-[100] flex justify-center pt-4 sm:pt-6 pointer-events-none transition-all duration-500">
+        <motion.div 
+          layout
+          className={`pointer-events-auto flex items-center justify-between gap-4 sm:gap-8 px-5 sm:px-8 py-3 rounded-full transition-all duration-500 w-[95%] lg:w-[1050px] ${headerBg}`}
         >
-          <div className="max-w-[1500px] mx-auto px-4 sm:px-6 md:px-12 lg:px-24 flex items-center justify-between">
-            
-            <div 
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="text-base sm:text-lg md:text-xl lg:text-2xl font-black cursor-pointer text-slate-900 dark:text-white tracking-tighter hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-500"
-            >
-              Sri Ram<span className="text-blue-500">.</span>
-            </div>
-
-            <nav className="hidden md:flex items-center gap-3 lg:gap-8 bg-black/5 dark:bg-white/5 px-4 lg:px-6 py-1.5 rounded-full border border-black/10 dark:border-white/10 transition-colors duration-500">
-              {[
-                { name: "About Me", id: "skills" },
-                { name: "Projects", id: "projects" },
-                { name: "Background", id: "education" },
-                { name: "Achievements", id: "achievements" },
-              ].map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => scrollTo(link.id)}
-                  className="text-[10px] lg:text-sm font-bold text-slate-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                >
-                  {link.name}
-                </button>
-              ))}
-            </nav>
-
-            <div className="flex items-center gap-2 sm:gap-4">
-              <AnimatedThemeToggler 
-                className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 transition-colors duration-500"
-                variant="circle" 
-              />
-              
-              <button 
-                onClick={() => scrollTo("resume-contact")}
-                className="px-3 py-1.5 sm:px-5 sm:py-2 md:px-6 bg-slate-900 dark:bg-white text-white dark:text-black text-[10px] sm:text-xs md:text-sm font-bold rounded-full hover:bg-blue-600 dark:hover:bg-blue-400 shadow-lg shadow-slate-200/50 dark:shadow-none transition-colors duration-500"
-              >
-                Contact
-              </button>
-            </div>
+          <div 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className={`text-lg sm:text-xl font-heading font-black cursor-pointer tracking-tight flex-shrink-0 transition-colors duration-300 text-slate-900 dark:text-white`}
+          >
+            Sri Ram<span className="text-blue-500">.</span>
           </div>
-          
-          <ScrollProgress className="top-[50px] sm:top-[60px] md:top-[70px] h-[2px] sm:h-[3px] opacity-80" />
-        </motion.header>
-      )}
-    </AnimatePresence>
+
+          <nav className="hidden md:flex items-center relative z-10" onMouseLeave={() => setHoveredLink(null)}>
+            {NAV_LINKS.map((link) => (
+              <button
+                key={link.name}
+                onClick={() => scrollTo(link.id)}
+                onMouseEnter={() => setHoveredLink(link.name)}
+                className={`relative px-4 py-2 text-xs lg:text-sm font-semibold transition-colors tracking-wide text-slate-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400`}
+              >
+                {hoveredLink === link.name && (
+                  <motion.div
+                    layoutId="nav-hover-pill"
+                    className="absolute inset-0 bg-slate-100 dark:bg-white/10 rounded-full -z-10"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10">{link.name}</span>
+              </button>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-4 sm:gap-6 flex-shrink-0">
+            
+            {/* The Terminal Command Toggle */}
+            <TerminalToggle />
+            
+            {/* The New Executable Contact Button */}
+            <ContactButton scrollTo={scrollTo} />
+            
+          </div>
+        </motion.div>
+      </header>
+
+      <ScrollProgress className="top-0 h-[3px] z-[101] opacity-90" />
+    </>
   );
 }

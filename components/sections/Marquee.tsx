@@ -113,8 +113,11 @@ export default function Marquee() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Reduced gaps on mobile (gap-8 vs gap-16) */}
-      <motion.div className="flex items-center gap-8 lg:gap-16 pr-8 lg:pr-16" style={{ x }}>
+      <motion.div 
+        // THE FIX: Added transform-gpu and will-change-transform to offload animation to the graphics card
+        className="flex items-center gap-8 lg:gap-16 pr-8 lg:pr-16 transform-gpu will-change-transform" 
+        style={{ x }}
+      >
         
         {/* Array doubled for infinite seamless scrolling */}
         {[...techStack, ...techStack].map((tech, i) => (
@@ -128,12 +131,12 @@ export default function Marquee() {
               {tech.icon}
             </div>
             
-            {/* The Text - Made smaller for mobile */}
+            {/* The Text */}
             <span className="text-xl sm:text-2xl lg:text-4xl font-black text-slate-300 dark:text-gray-600 uppercase tracking-widest transition-colors duration-300 group-hover:text-purple-500 dark:group-hover:text-sky-400">
               {tech.name}
             </span>
             
-            {/* The Separator Dot - Closer margin on mobile */}
+            {/* The Separator Dot */}
             <span className="text-purple-500/30 dark:text-sky-500/30 text-xl lg:text-2xl ml-6 lg:ml-12">•</span>
           </motion.div>
         ))}

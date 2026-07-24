@@ -109,7 +109,7 @@ export const ACHIEVEMENTS_DATA = [
     icon: <Trophy size={22} className="text-sky-500" />,
     badge: "1st Prize",
     points: [
-      "Secured 1st Prize at TECHNOVIBES Hackathon.",
+      "The Top Innovative Idea at TECHNOVIBES Hackathon.",
       "Developed FoodLink to connect surplus food with those in need.",
       "Collaborated to build a tech-driven social impact solution."
     ],
