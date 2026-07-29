@@ -31,7 +31,6 @@ export default function ExperienceContact() {
   const { contact } = PORTFOLIO_DATA;
   const dialogRef = useRef<HTMLDialogElement>(null);
   
-  // Interactive Verification State
   const [isDecrypted, setIsDecrypted] = useState(false);
   const [isDecrypting, setIsDecrypting] = useState(false);
   const [scrambledText, setScrambledText] = useState("0x8F9A...AWAITING_AUTH");
@@ -55,65 +54,56 @@ export default function ExperienceContact() {
   };
 
   return (
-    <section id="resume-contact" className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-16 w-[95%] sm:w-[90%] md:w-[85%] lg:w-[75%] mx-auto transition-colors duration-500">
+    <section id="resume-contact" className="py-20 lg:py-32 px-6 lg:px-16 w-full lg:w-[75%] mx-auto transition-colors duration-500">
 
-      <div className="mb-6 sm:mb-8 md:mb-12 flex flex-col items-center sm:items-start text-center sm:text-left">
+      <div className="mb-12 flex flex-col items-start text-left">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-          {/* Reverted to Contact */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-slate-900 dark:text-white flex items-center justify-center sm:justify-start gap-2 sm:gap-3 md:gap-4 mb-1 sm:mb-2">
-            Contact Me<Send className="text-sky-500 hidden sm:block w-6 h-6 sm:w-8 sm:h-8" />
+          <h2 className="text-4xl lg:text-6xl font-heading font-black text-slate-900 dark:text-white flex items-center justify-start gap-4 mb-2">
+            Contact Me<Send className="text-sky-500 block w-6 h-6 lg:w-8 lg:h-8" />
           </h2>
-          <p className="font-mono text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-sky-600 dark:text-sky-400 uppercase tracking-widest font-bold mb-2 sm:mb-3 lg:mb-4">
+          <p className="font-mono text-xs lg:text-sm text-sky-600 dark:text-sky-400 uppercase tracking-widest font-bold mb-4">
             // Ready_to_Connect?
           </p>
         </motion.div>
       </div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-5 gap-4 sm:gap-6 md:gap-8 items-stretch">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
 
-        {/* ========================================= */}
-        {/* RESUME CARD (Col 1-3)                     */}
-        {/* ========================================= */}
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="xl:col-span-3 h-full">
-          <div className="w-full h-full !bg-white dark:!bg-[#08080a] border border-purple-500/20 dark:border-white/10 rounded-[1.25rem] sm:rounded-[1.5rem] p-4 sm:p-6 md:p-8 flex flex-col justify-between group relative overflow-hidden transition-all duration-500 hover:border-purple-500 dark:hover:border-purple-500/50 shadow-xl z-10">
-            <div className="absolute top-0 left-0 w-32 h-32 sm:w-48 sm:h-48 bg-gradient-to-br from-purple-500/20 to-purple-500/10 dark:from-purple-500/10 dark:to-purple-500/5 rounded-full blur-[40px] sm:blur-[60px] group-hover:scale-125 transition-transform duration-700 -z-10" />
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="lg:col-span-3 h-full">
+          <div className="w-full h-full !bg-white dark:!bg-[#08080a] border border-purple-500/20 dark:border-white/10 rounded-[1.5rem] p-6 lg:p-8 flex flex-col justify-between group relative overflow-hidden transition-all duration-500 hover:border-purple-500 dark:hover:border-purple-500/50 shadow-xl z-10">
+            <div className="absolute top-0 left-0 w-48 h-48 bg-gradient-to-br from-purple-500/20 to-purple-500/10 dark:from-purple-500/10 dark:to-purple-500/5 rounded-full blur-[60px] group-hover:scale-125 transition-transform duration-700 -z-10" />
             
-            {/* Reverted to My Resume */}
-            <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-slate-900 dark:text-white flex items-center gap-2">
+            <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-white flex items-center gap-2">
               <FileText className="text-purple-500 w-5 h-5" /> My Resume
             </h3>
             <dialog 
-        ref={dialogRef} 
-        className="backdrop:bg-black/80 backdrop:backdrop-blur-sm bg-transparent w-[95vw] md:w-[80vw] lg:w-[70vw] h-[90vh] max-w-6xl rounded-2xl shadow-2xl p-0 m-auto overflow-hidden border border-slate-700/50 open:animate-in open:fade-in open:zoom-in-95"
-      >
-        <div className="relative w-full h-full flex flex-col bg-slate-900">
-          
-          {/* Modal Header */}
-          <div className="flex items-center justify-between p-3 sm:p-4 border-b border-slate-800 bg-slate-950 text-white font-mono text-xs sm:text-sm">
-            <div className="flex items-center gap-2">
-              <FileText className="w-4 h-4 text-purple-400" />
-              <span>Sri_Ram_M_Resume.pdf</span>
-            </div>
-            <button 
-              onClick={closeModal}
-              className="p-1.5 sm:p-2 hover:bg-rose-500/20 text-slate-400 hover:text-rose-400 rounded-lg transition-colors flex items-center gap-2"
+              ref={dialogRef} 
+              className="backdrop:bg-black/80 backdrop:backdrop-blur-sm bg-transparent w-[90vw] lg:w-[70vw] h-[90vh] max-w-6xl rounded-2xl shadow-2xl p-0 m-auto overflow-hidden border border-slate-700/50 open:animate-in open:fade-in open:zoom-in-95"
             >
-              <span className="hidden sm:inline">CLOSE_PREVIEW</span>
-              <X className="w-4 h-4 sm:w-5 sm:h-5" />
-            </button>
-          </div>
-          
-          {/* PDF Viewer */}
-          <div className="flex-1 w-full h-full bg-slate-800 p-2 sm:p-4">
-            <iframe 
-              src="/Sri_Ram_M_Resume.pdf#toolbar=0" 
-              className="w-full h-full rounded-lg border border-slate-700 bg-white"
-              title="Resume Preview"
-            />
-          </div>
-        </div>
-      </dialog>
-            <div className="w-full flex-1 min-h-[150px] sm:min-h-[200px] bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-lg sm:rounded-xl relative overflow-hidden flex items-center justify-center group-hover:border-purple-300 dark:group-hover:border-purple-500/30 transition-colors duration-500 mb-4">
+              <div className="relative w-full h-full flex flex-col bg-slate-900">
+                <div className="flex items-center justify-between p-4 border-b border-slate-800 bg-slate-950 text-white font-mono text-sm">
+                  <div className="flex items-center gap-2">
+                    <FileText className="w-4 h-4 text-purple-400" />
+                    <span className="truncate max-w-[150px] lg:max-w-none">Sri_Ram_M_Resume.pdf</span>
+                  </div>
+                  <button 
+                    onClick={closeModal}
+                    className="p-2 hover:bg-rose-500/20 text-slate-400 hover:text-rose-400 rounded-lg transition-colors flex items-center gap-2"
+                  >
+                    <span className="hidden sm:inline">CLOSE_PREVIEW</span>
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+                <div className="flex-1 w-full h-full bg-slate-800 p-2 lg:p-4">
+                  <iframe 
+                    src="/Sri_Ram_M_Resume.pdf#toolbar=0" 
+                    className="w-full h-full rounded-lg border border-slate-700 bg-white"
+                    title="Resume Preview"
+                  />
+                </div>
+              </div>
+            </dialog>
+            <div className="w-full flex-1 min-h-[200px] bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl relative overflow-hidden flex items-center justify-center group-hover:border-purple-300 dark:group-hover:border-purple-500/30 transition-colors duration-500 mb-4">
               <img src="/sri_ram_resume.png" alt="Resume Blurred" className="absolute inset-0 w-full h-full object-cover object-top blur-[2px] opacity-70 dark:opacity-50 transition-all duration-500 group-hover:scale-105 group-hover:blur-md" />
               <span className="absolute inset-0 bg-white/20 dark:bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
                 <button onClick={openModal} className="flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-black px-4 py-2 rounded-lg text-sm font-bold hover:scale-105 transition-transform shadow-xl">
@@ -128,16 +118,12 @@ export default function ExperienceContact() {
           </div>
         </motion.div>
 
-        {/* ========================================= */}
-        {/* SECURE CONTACT CARD (Col 4-5)             */}
-        {/* ========================================= */}
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.1 }} className="xl:col-span-2 h-full">
-          <div className="w-full h-full !bg-slate-50 dark:!bg-[#050505] border border-sky-500/20 dark:border-white/10 rounded-[1.25rem] sm:rounded-[1.5rem] p-4 sm:p-6 md:p-8 flex flex-col justify-center relative overflow-hidden transition-all duration-500 shadow-xl z-10 font-mono">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.1 }} className="lg:col-span-2 h-full">
+          <div className="w-full h-full !bg-slate-50 dark:!bg-[#050505] border border-sky-500/20 dark:border-white/10 rounded-[1.5rem] p-6 lg:p-8 flex flex-col justify-center relative overflow-hidden transition-all duration-500 shadow-xl z-10 font-mono">
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-sky-500/20 to-sky-500/10 dark:from-sky-500/10 dark:to-sky-500/5 rounded-full blur-[40px] transition-transform duration-700 -z-10" />
 
-            {/* Clearer Context */}
             <div className="flex items-center justify-between mb-4 border-b border-sky-500/20 pb-2">
-              <span className="text-xs text-slate-500 dark:text-slate-400 font-bold tracking-widest flex items-center gap-2">
+              <span className="text-[10px] lg:text-xs text-slate-500 dark:text-slate-400 font-bold tracking-widest flex items-center gap-2">
                 {isDecrypted ? <ShieldCheck className="w-4 h-4 text-emerald-500" /> : <Lock className="w-4 h-4 text-rose-500" />}
                 SECURE CONTACT PORTAL
               </span>
@@ -150,7 +136,7 @@ export default function ExperienceContact() {
                     {scrambledText}
                   </motion.div>
                 ) : (
-                  <motion.div key="unlocked" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-xs sm:text-sm">
+                  <motion.div key="unlocked" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-xs lg:text-sm overflow-x-auto no-scrollbar whitespace-nowrap">
                     <span className="text-slate-400">{`{`}</span><br />
                     &nbsp;&nbsp;<span className="text-sky-500">"status"</span><span className="text-slate-400">: </span><span className="text-emerald-500">200</span>,<br />
                     &nbsp;&nbsp;<span className="text-sky-500">"contact_info"</span><span className="text-slate-400">: {`{`}</span><br />
@@ -163,9 +149,8 @@ export default function ExperienceContact() {
               </AnimatePresence>
             </div>
 
-            {/* Simpler Button Label */}
             {!isDecrypted && (
-              <button onClick={handleDecryption} disabled={isDecrypting} className="w-full py-3 bg-sky-500 hover:bg-sky-400 text-white text-xs font-bold tracking-widest rounded-md shadow-[0_0_15px_rgba(14,165,233,0.4)] transition-all flex items-center justify-center gap-2 uppercase">
+              <button onClick={handleDecryption} disabled={isDecrypting} className="w-full py-3 bg-sky-500 hover:bg-sky-400 text-white text-[10px] lg:text-xs font-bold tracking-widest rounded-md shadow-[0_0_15px_rgba(14,165,233,0.4)] transition-all flex items-center justify-center gap-2 uppercase">
                 {isDecrypting ? "DECRYPTING..." : <><Unlock className="w-4 h-4" /> UNLOCK CONTACT INFO</>}
               </button>
             )}

@@ -17,8 +17,8 @@ export const MARQUEE_TECH = [
 ];
 
 // 3. SKILLS FALLBACKS
-export const SKILLS_DBMS = ["PostgreSQL", "MongoDB", "MySQL"];
-export const SKILLS_TOOLS = ["Git", "GitHub", "VS Code", "Docker", "Render"];
+export const SKILLS_DBMS = ["MongoDB", "MySQL"];
+export const SKILLS_TOOLS = ["Python", "Java", "C"];
 
 // 4. EDUCATION DATA
 export const EDUCATION_DATA = [
@@ -28,7 +28,6 @@ export const EDUCATION_DATA = [
     date: "2024 – Present",
     points: [
       "Pursuing a Bachelor's degree in Computer Science and Engineering.",
-      "Building expertise in Full Stack Development, Artificial Intelligence, Machine Learning, and Software Engineering.",
       "Actively participating in hackathons, technical events, workshops, and project-based learning."
     ],
     dotColor: "bg-sky-500 shadow-[0_0_15px_rgba(14,165,233,0.8)]",
@@ -65,10 +64,9 @@ export const EXPERIENCE_DATA = [
     company: "Nxtlogic Software Solutions",
     date: "June 2025 – July 2025",
     points: [
-      "Successfully completed an AI/ML internship focused on practical machine learning concepts and applications.",
-      "Strengthened programming, analytical thinking, and problem-solving abilities through hands-on tasks.",
-      "Worked alongside industry professionals and gained exposure to real-world software development practices.",
-      "Developed a deeper understanding of Artificial Intelligence and Machine Learning workflows."
+      "Completed an AI/ML internship, gaining hands-on experience in machine learning and real-world applications.",
+      "Applied AI concepts to practical projects while strengthening my programming, analytical, and problem-solving skills.",
+      "Collaborated with industry professionals and gained valuable insight into modern software development workflows."
     ],
     dotColor: "bg-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.8)]",
     subColor: "text-purple-500 dark:text-purple-400",
@@ -78,10 +76,9 @@ export const EXPERIENCE_DATA = [
     company: "Independent Projects",
     date: "2024 – Present",
     points: [
-      "Developing academic and personal projects using modern web technologies.",
-      "Building full-stack applications using React, Firebase, JavaScript, and Python.",
-      "Exploring AI integration in web applications and real-world software solutions.",
-      "Continuously improving software design, debugging, and development skills."
+      "Building academic and personal projects with modern web technologies and AI.",
+      "Creating full-stack applications using React, Python and MongoDB.",
+      "Refining every project through better design, cleaner code, and thoughtful problem-solving."
     ],
     dotColor: "bg-sky-500 shadow-[0_0_15px_rgba(14,165,233,0.8)]",
     subColor: "text-sky-500 dark:text-sky-400",
@@ -91,10 +88,9 @@ export const EXPERIENCE_DATA = [
     company: "Workshops & Events",
     date: "Ongoing",
     points: [
-      "Attended technical workshops, seminars, and industry events to stay updated with emerging technologies.",
+      "Actively participated in technical workshops, seminars, and industry events to stay connected with emerging technologies.",
       "Participated in AI, Web Development, and Software Engineering learning programs.",
-      "Attended NVIDIA RTX AI PC Day and explored Generative AI workflows, RTX acceleration, and modern GPU technologies.",
-      "Engaged in hands-on learning experiences involving AI tools, creative workflows, and real-time rendering technologies."
+      "Attended NVIDIA RTX AI PC Day and explored Generative AI workflows, RTX acceleration, and modern GPU technologies."
     ],
     dotColor: "bg-emerald-500 shadow-[0_0_15px_rgba(244,63,94,0.8)]",
     subColor: "text-emerald-500 dark:text-emerald-400",
@@ -104,7 +100,7 @@ export const EXPERIENCE_DATA = [
 // 6. ACHIEVEMENTS DATA
 export const ACHIEVEMENTS_DATA = [
   {
-    title: "1st Place – TECHNOVIBES",
+    title: "TECHNOVIBES",
     subtitle: "FoodLink – Surplus Food Platform",
     icon: <Trophy size={22} className="text-sky-500" />,
     badge: "1st Prize",
@@ -166,23 +162,23 @@ export const ACHIEVEMENTS_DATA = [
 export const PORTFOLIO_DATA = {
   hero: {
     name: "Sri Ram M",
-    role: "Aspiring Full-Stack Developer",
-    intro: "Computer Science student driven by curiosity, innovation, and continuous growth. Developing impactful software solutions with modern web technologies and AI.",
-    status: "Building innovative software solutions inspired by real-world business challenges."
+    role: "Software Developer",
+    intro: "Good enough has never been the goal. I build, refine, and rethink until every detail feels right. B.E. CSE student exploring AI, creating thoughtful software, and turning ideas into experiences that live beyond the screen. ",
+    status: "Every solution begins with a question. Every project ends with something worth creating."
   },
   about: {
     heading: "About Me",
     content: [
-      "I am currently pursuing my undergraduate degree in Computer Science Engineering at Coimbatore Institute of Engineering and Technology.",
-      "My goal is to become a proficient full-stack developer and contribute to innovative projects in a highly reputed organization.",
-      "I am passionate about learning new technologies and continuously improving my skills to excel in the dynamic field of software development.",
-      "Beyond technical development, I bring an eye for UI/UX design, photography, and editing to create seamless, interactive digital experiences."
+      "I'm Currently pursuing a B.E. in Computer Science and Engineering at Coimbatore Institute of Engineering and Technology.",
+      "I'm looking for opportunities to build meaningful software, work alongside talented people, and contribute to projects that solve real problems. Every experience is another chance to learn, refine my craft, and create something better than before..",
+      "Beyond technical development, I bring an eye for UI/UX design, photography, and editing to create seamless, interactive digital experiences.",
+      "I'm always looking for the next idea worth building, the next problem worth solving, and the next opportunity to create something better than yesterday."
     ]
   },
   skills: {
     frontend: ["ReactJS", "UI/UX Designer", "Front-end Web Developer", "HTML/CSS/JS", "Tailwind css"],
     backend: ["Node.js", "Express.js", "Puppeteer"],
-    ai: ["Gemini API", "Ollama", "AI Agents"],
+    ai: ["Git","Github","Vscode","Gemini API", "Ollama", "AI Agents"],
     dbms: SKILLS_DBMS,
     tools: SKILLS_TOOLS
   },
