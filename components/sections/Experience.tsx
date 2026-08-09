@@ -39,7 +39,7 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="py-20 lg:py-32 w-[90%] lg:w-[75%] mx-auto overflow-visible relative">
+    <section id="experience" className="py-20 -mb-15 lg:py-32 w-[90%] lg:w-[75%] mx-auto overflow-visible relative">
       <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12 relative items-start">
         
         <div className="w-full lg:col-span-4 h-full relative mb-10 lg:mb-0">

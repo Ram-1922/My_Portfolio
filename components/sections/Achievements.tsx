@@ -6,7 +6,7 @@ import { ACHIEVEMENTS_DATA } from "@/data";
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="py-20 lg:py-32 w-[90%] lg:w-[75%] mx-auto relative flex flex-col lg:flex-row gap-8 lg:gap-20 items-start">
+    <section id="achievements" className="py-20 -mb-15  lg:py-32 w-[90%] lg:w-[75%] mx-auto relative flex flex-col lg:flex-row gap-8 lg:gap-20 items-start">
 
       {/* order-first ensures it is on top for mobile, lg:order-last moves it to the right on desktop */}
       <div className="w-full lg:w-1/3 relative lg:sticky lg:top-32 z-10 order-first lg:order-last mb-2 lg:mb-0">

@@ -54,11 +54,11 @@ export default function ExperienceContact() {
   };
 
   return (
-    <section id="resume-contact" className="py-20 lg:py-32 px-6 lg:px-16 w-full lg:w-[75%] mx-auto transition-colors duration-500">
+    <section id="resume-contact" className="py-20 -mb-20 lg:py-32 px-6 w-full lg:w-[85%] xl:w-[75%] mx-auto transition-colors duration-500">
 
-      <div className="mb-12 flex flex-col items-start text-left">
+      <div className="mb-10 flex flex-col items-start text-left">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-          <h2 className="text-4xl lg:text-6xl font-heading font-black text-slate-900 dark:text-white flex items-center justify-start gap-4 mb-2">
+          <h2 className="text-4xl lg:text-6xl font-heading font-black text-slate-900 dark:text-white flex items-center justify-start gap-3 lg:gap-4 mb-2">
             Contact Me<Send className="text-sky-500 block w-6 h-6 lg:w-8 lg:h-8" />
           </h2>
           <p className="font-mono text-xs lg:text-sm text-sky-600 dark:text-sky-400 uppercase tracking-widest font-bold mb-4">
@@ -67,31 +67,31 @@ export default function ExperienceContact() {
         </motion.div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-stretch">
 
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="lg:col-span-3 h-full">
-          <div className="w-full h-full !bg-white dark:!bg-[#08080a] border border-purple-500/20 dark:border-white/10 rounded-[1.5rem] p-6 lg:p-8 flex flex-col justify-between group relative overflow-hidden transition-all duration-500 hover:border-purple-500 dark:hover:border-purple-500/50 shadow-xl z-10">
+          <div className="w-full h-full min-h-[300px] !bg-white dark:!bg-[#08080a] border border-purple-500/20 dark:border-white/10 rounded-[1.5rem] p-5 sm:p-6 lg:p-8 flex flex-col justify-between group relative overflow-hidden transition-all duration-500 hover:border-purple-500 dark:hover:border-purple-500/50 shadow-xl z-10">
             <div className="absolute top-0 left-0 w-48 h-48 bg-gradient-to-br from-purple-500/20 to-purple-500/10 dark:from-purple-500/10 dark:to-purple-500/5 rounded-full blur-[60px] group-hover:scale-125 transition-transform duration-700 -z-10" />
             
-            <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-white flex items-center gap-2">
-              <FileText className="text-purple-500 w-5 h-5" /> My Resume
+            <h3 className="text-lg lg:text-xl font-bold mb-4 text-slate-900 dark:text-white flex items-center gap-2">
+              <FileText className="text-purple-500 w-4 h-4 lg:w-5 lg:h-5" /> My Resume
             </h3>
             <dialog 
               ref={dialogRef} 
-              className="backdrop:bg-black/80 backdrop:backdrop-blur-sm bg-transparent w-[90vw] lg:w-[70vw] h-[90vh] max-w-6xl rounded-2xl shadow-2xl p-0 m-auto overflow-hidden border border-slate-700/50 open:animate-in open:fade-in open:zoom-in-95"
+              className="backdrop:bg-black/80 backdrop:backdrop-blur-sm bg-transparent w-[95vw] sm:w-[90vw] lg:w-[70vw] h-[90vh] max-w-6xl rounded-2xl shadow-2xl p-0 m-auto overflow-hidden border border-slate-700/50 open:animate-in open:fade-in open:zoom-in-95"
             >
               <div className="relative w-full h-full flex flex-col bg-slate-900">
-                <div className="flex items-center justify-between p-4 border-b border-slate-800 bg-slate-950 text-white font-mono text-sm">
+                <div className="flex items-center justify-between p-3 lg:p-4 border-b border-slate-800 bg-slate-950 text-white font-mono text-[10px] sm:text-sm">
                   <div className="flex items-center gap-2">
                     <FileText className="w-4 h-4 text-purple-400" />
-                    <span className="truncate max-w-[150px] lg:max-w-none">Sri_Ram_M_Resume.pdf</span>
+                    <span className="truncate">Sri_Ram_M_Resume.pdf</span>
                   </div>
                   <button 
                     onClick={closeModal}
-                    className="p-2 hover:bg-rose-500/20 text-slate-400 hover:text-rose-400 rounded-lg transition-colors flex items-center gap-2"
+                    className="p-1.5 lg:p-2 hover:bg-rose-400/20 text-slate-400 hover:text-rose-300 rounded-lg transition-colors flex items-center gap-2"
                   >
-                    <span className="hidden sm:inline">CLOSE_PREVIEW</span>
-                    <X className="w-5 h-5" />
+                    
+                    <X className="w-4 h-4 lg:w-5 lg:h-5" />
                   </button>
                 </div>
                 <div className="flex-1 w-full h-full bg-slate-800 p-2 lg:p-4">
@@ -103,45 +103,48 @@ export default function ExperienceContact() {
                 </div>
               </div>
             </dialog>
-            <div className="w-full flex-1 min-h-[200px] bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl relative overflow-hidden flex items-center justify-center group-hover:border-purple-300 dark:group-hover:border-purple-500/30 transition-colors duration-500 mb-4">
+            
+            <div className="w-full flex-1 min-h-[160px] lg:min-h-[200px] bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl relative overflow-hidden flex items-center justify-center group-hover:border-purple-300 dark:group-hover:border-purple-500/30 transition-colors duration-500 mb-4">
               <img src="/sri_ram_resume.png" alt="Resume Blurred" className="absolute inset-0 w-full h-full object-cover object-top blur-[2px] opacity-70 dark:opacity-50 transition-all duration-500 group-hover:scale-105 group-hover:blur-md" />
               <span className="absolute inset-0 bg-white/20 dark:bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
-                <button onClick={openModal} className="flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-black px-4 py-2 rounded-lg text-sm font-bold hover:scale-105 transition-transform shadow-xl">
+                <button onClick={openModal} className="flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-black px-3 py-1.5 lg:px-4 lg:py-2 rounded-lg text-xs lg:text-sm font-bold hover:scale-105 transition-transform shadow-xl">
                   <Eye className="w-4 h-4" /> Preview File
                 </button>
               </span>
             </div>
 
-            <a href="/Sri_Ram_M_Resume.pdf" download className="flex items-center justify-center gap-2 w-full py-3 bg-purple-600 hover:bg-purple-500 text-white text-sm font-bold rounded-lg transition-colors shadow-lg shadow-purple-500/25">
+            <a href="/Sri_Ram_M_Resume.pdf" download className="flex items-center justify-center gap-2 w-full py-2.5 lg:py-3 bg-purple-600 hover:bg-purple-500 text-white text-xs lg:text-sm font-bold rounded-lg transition-colors shadow-lg shadow-purple-500/25">
               <Download className="w-4 h-4" /> Download Resume
             </a>
           </div>
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.1 }} className="lg:col-span-2 h-full">
-          <div className="w-full h-full !bg-slate-50 dark:!bg-[#050505] border border-sky-500/20 dark:border-white/10 rounded-[1.5rem] p-6 lg:p-8 flex flex-col justify-center relative overflow-hidden transition-all duration-500 shadow-xl z-10 font-mono">
+          <div className="w-full h-full !bg-slate-50 dark:!bg-[#050505] border border-sky-500/20 dark:border-white/10 rounded-[1.5rem] p-5 sm:p-6 lg:p-8 flex flex-col justify-center relative overflow-hidden transition-all duration-500 shadow-xl z-10 font-mono">
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-sky-500/20 to-sky-500/10 dark:from-sky-500/10 dark:to-sky-500/5 rounded-full blur-[40px] transition-transform duration-700 -z-10" />
 
             <div className="flex items-center justify-between mb-4 border-b border-sky-500/20 pb-2">
-              <span className="text-[10px] lg:text-xs text-slate-500 dark:text-slate-400 font-bold tracking-widest flex items-center gap-2">
+              <span className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-bold tracking-widest flex items-center gap-2">
                 {isDecrypted ? <ShieldCheck className="w-4 h-4 text-emerald-500" /> : <Lock className="w-4 h-4 text-rose-500" />}
-                SECURE CONTACT PORTAL
+                SECURE PORTAL
               </span>
             </div>
 
-            <div className="flex-1 flex flex-col justify-center min-h-[160px] bg-slate-200/50 dark:bg-black/50 rounded-md border border-slate-300 dark:border-white/5 p-4 mb-6 shadow-inner relative overflow-hidden">
+            <div className="flex-1 flex flex-col justify-center min-h-[160px] lg:min-h-[180px] bg-slate-200/50 dark:bg-black/50 rounded-md border border-slate-300 dark:border-white/5 p-3 lg:p-4 mb-4 lg:mb-6 shadow-inner relative overflow-x-auto overflow-y-hidden">
               <AnimatePresence mode="wait">
                 {!isDecrypted ? (
-                  <motion.div key="locked" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-sm text-slate-500 dark:text-slate-400 break-all">
+                  <motion.div key="locked" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-xs lg:text-sm text-slate-500 dark:text-slate-400 break-all w-full text-center">
                     {scrambledText}
                   </motion.div>
                 ) : (
-                  <motion.div key="unlocked" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-xs lg:text-sm overflow-x-auto no-scrollbar whitespace-nowrap">
+                  <motion.div key="unlocked" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-[10px] sm:text-xs lg:text-sm w-full min-w-max">
                     <span className="text-slate-400">{`{`}</span><br />
                     &nbsp;&nbsp;<span className="text-sky-500">"status"</span><span className="text-slate-400">: </span><span className="text-emerald-500">200</span>,<br />
-                    &nbsp;&nbsp;<span className="text-sky-500">"contact_info"</span><span className="text-slate-400">: {`{`}</span><br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-purple-500">"email"</span><span className="text-slate-400">: </span><a href={`mailto:${contact.email}`} className="text-amber-500 hover:underline">"{contact.email}"</a>,<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-purple-500">"phone"</span><span className="text-slate-400">: </span><a href={`tel:${contact.phone.replace(/\s+/g, '')}`} className="text-amber-500 hover:underline">"{contact.phone}"</a><br />
+                    &nbsp;&nbsp;<span className="text-sky-500">"contact"</span><span className="text-slate-400">: {`{`}</span><br />
+                    <div className="pl-4 sm:pl-6">
+                      <span className="text-purple-500">"email"</span><span className="text-slate-400">: </span><a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${contact.email}`} className="text-amber-500 hover:underline break-all sm:break-normal">"{contact.email}"</a>,<br />
+                      <span className="text-purple-500">"phone"</span><span className="text-slate-400">: </span><a href={`tel:${contact.phone.replace(/\s+/g, '')}`} className="text-amber-500 hover:underline">"{contact.phone}"</a><br />
+                    </div>
                     &nbsp;&nbsp;<span className="text-slate-400">{`}`}</span><br />
                     <span className="text-slate-400">{`}`}</span>
                   </motion.div>
@@ -150,22 +153,37 @@ export default function ExperienceContact() {
             </div>
 
             {!isDecrypted && (
-              <button onClick={handleDecryption} disabled={isDecrypting} className="w-full py-3 bg-sky-500 hover:bg-sky-400 text-white text-[10px] lg:text-xs font-bold tracking-widest rounded-md shadow-[0_0_15px_rgba(14,165,233,0.4)] transition-all flex items-center justify-center gap-2 uppercase">
-                {isDecrypting ? "DECRYPTING..." : <><Unlock className="w-4 h-4" /> UNLOCK CONTACT INFO</>}
+              <button onClick={handleDecryption} disabled={isDecrypting} className="w-full py-2.5 lg:py-3 bg-sky-500 hover:bg-sky-400 text-white text-[10px] sm:text-xs font-bold tracking-widest rounded-md shadow-[0_0_15px_rgba(14,165,233,0.4)] transition-all flex items-center justify-center gap-2 uppercase whitespace-nowrap">
+                {isDecrypting ? "DECRYPTING..." : <><Unlock className="w-3 h-3 lg:w-4 lg:h-4" /> UNLOCK INFO</>}
               </button>
             )}
 
             {isDecrypted && (
-              <div className="flex justify-center w-full mt-2">
-                <Dock className="border-none shadow-none bg-transparent m-0 p-0">
+              <div className="flex justify-center w-full mt-2 h-10 lg:h-12 items-center">
+                <Dock className="border-none shadow-none bg-transparent m-0 p-0 h-full">
                   <DockIcon>
-                    <Magnetic><a href="https://www.linkedin.com/in/ram2219/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-sky-500/10 hover:shadow-[0_0_15px_rgba(14,165,233,0.5)] transition-all text-slate-700 dark:text-slate-300 hover:text-sky-500"><Icons.linkedin className="w-5 h-5" /></a></Magnetic>
+                    <Magnetic>
+                      <a href="https://www.linkedin.com/in/ram2219/" target="_blank" rel="noopener noreferrer" 
+                         className="w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center transition-all text-slate-700 dark:text-slate-300 hover:bg-[#0A66C2]/10 hover:shadow-[0_0_15px_rgba(10,102,194,0.4)] hover:text-[#0A66C2] dark:hover:bg-[#0A66C2]/20 dark:hover:text-[#0A66C2] dark:hover:shadow-[0_0_15px_rgba(10,102,194,0.6)]">
+                        <Icons.linkedin className="w-4 h-4 lg:w-5 lg:h-5" />
+                      </a>
+                    </Magnetic>
                   </DockIcon>
                   <DockIcon>
-                    <Magnetic><a href="https://github.com/Ram-1922/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-purple-500/10 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-all text-slate-700 dark:text-slate-300 hover:text-purple-500"><Icons.github className="w-5 h-5" /></a></Magnetic>
+                    <Magnetic>
+                      <a href="https://github.com/Ram-1922/" target="_blank" rel="noopener noreferrer" 
+                         className="w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center transition-all text-slate-700 dark:text-slate-300 hover:bg-slate-900/10 hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:text-slate-900 dark:hover:bg-white/10 dark:hover:text-white dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                        <Icons.github className="w-4 h-4 lg:w-5 lg:h-5" />
+                      </a>
+                    </Magnetic>
                   </DockIcon>
                   <DockIcon>
-                    <Magnetic><a href={`https://wa.me/${contact.phone.replace(/\s+/g, '')}`} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-emerald-500/10 hover:shadow-[0_0_15px_rgba(16,185,129,0.5)] transition-all text-slate-700 dark:text-slate-300 hover:text-emerald-500"><Icons.whatsapp className="w-5 h-5" /></a></Magnetic>
+                    <Magnetic>
+                      <a href={`https://wa.me/${contact.phone.replace(/[+\s]/g,'')}?text=Hi%20Sri%20Ram!%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you`} target="_blank" rel="noopener noreferrer" 
+                         className="w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center transition-all text-slate-700 dark:text-slate-300 hover:bg-[#25D366]/10 hover:shadow-[0_0_15px_rgba(37,211,102,0.4)] hover:text-[#25D366] dark:hover:bg-[#25D366]/20 dark:hover:text-[#25D366] dark:hover:shadow-[0_0_15px_rgba(37,211,102,0.6)]">
+                        <Icons.whatsapp className="w-4 h-4 lg:w-5 lg:h-5" />
+                      </a>
+                    </Magnetic>
                   </DockIcon>
                 </Dock>
               </div>

@@ -5,7 +5,7 @@ import { PORTFOLIO_DATA, HERO_ROLES } from "@/data";
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { ArrowRight, Terminal, FileJson, Database } from "lucide-react";
+import { ArrowRight, Terminal, FileUser, FolderOpenDot } from "lucide-react";
 
 const LightRays = dynamic(() => import("@/components/ui/LightRays"), { ssr: false });
 
@@ -24,7 +24,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden px-6 md:px-12 lg:px-24 transition-colors duration-500 bg-white dark:bg-[#030305]">
+    <section className="relative min-h-screen -mt-18 md:-mt-0 w-full flex items-center justify-center overflow-hidden px-6 md:px-12 lg:px-24 transition-colors duration-500 bg-white dark:bg-[#030305]">
       
       {mounted && resolvedTheme === 'dark' && (
         <div className="absolute inset-0 z-[1] pointer-events-none opacity-100 transition-opacity duration-500 block">
@@ -90,7 +90,7 @@ export default function Hero() {
               initial="initial"
               className="relative w-full sm:w-auto flex items-center justify-center gap-2 lg:gap-3 px-6 py-3 lg:px-8 lg:py-4 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-black font-mono text-xs sm:text-sm lg:text-base font-bold overflow-hidden shadow-xl dark:shadow-[0_0_20px_rgba(255,255,255,0.1)] group"
             >
-              <FileJson className="w-4 h-4 lg:w-5 lg:h-5 text-blue-400 dark:text-blue-600" />
+              <FileUser className="w-4 h-4 lg:w-5 lg:h-5 text-blue-400 dark:text-blue-600" />
               <span className="relative z-10 whitespace-nowrap">View_Resume</span>
               <motion.div
                 variants={{
@@ -108,7 +108,7 @@ export default function Hero() {
               whileTap={{ scale: 0.98 }}
               className="relative w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 lg:px-8 lg:py-4 rounded-lg bg-transparent border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-300 font-mono text-xs sm:text-sm lg:text-base font-bold hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors group"
             >
-              <Database className="w-4 h-4 lg:w-5 lg:h-5 text-slate-400 group-hover:text-purple-500 dark:group-hover:text-purple-400 transition-colors" />
+              <FolderOpenDot className="w-4 h-4 lg:w-5 lg:h-5 text-slate-400 group-hover:text-purple-500 dark:group-hover:text-purple-400 transition-colors" />
               <span className="whitespace-nowrap">Featured_Work</span>
             </motion.a>
           </div>
@@ -117,7 +117,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="flex items-center justify-start gap-2 lg:gap-3 mt-4 lg:mt-8 p-3 lg:p-4 rounded-2xl bg-black/5 dark:bg-black/40 border border-black/10 dark:border-white/5 w-fit backdrop-blur-xl mx-0"
+            className="flex items-center justify-start mb-5 gap-2 lg:gap-3 mt-4 lg:mt-8 p-3 lg:p-4 rounded-2xl bg-black/5 dark:bg-black/40 border border-black/10 dark:border-white/5 w-fit backdrop-blur-xl mx-0"
           >
             <Terminal className="text-blue-500 dark:text-blue-400 shrink-0 w-4 h-4 lg:w-5 lg:h-5" />
             <span className="text-xs sm:text-sm text-slate-500 dark:text-slate-300 font-mono tracking-wider font-medium">
@@ -158,7 +158,7 @@ export default function Hero() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] h-[260px] bg-blue-500/20 dark:bg-blue-400/30 rounded-full blur-[60px] z-[2] opacity-80" />
                 <div className="relative z-[4] w-[360px] h-[480px] flex justify-center items-end pointer-events-none">
                   <img 
-                    src="/profile2.png" 
+                    src={resolvedTheme === 'dark' ? "/profile5.png" : "/profile6.png"} 
                     alt={name} 
                     className="object-contain w-full h-full drop-shadow-xl dark:drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] pointer-events-auto"
                     style={{ WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)', maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)' }}
@@ -217,7 +217,7 @@ export default function Hero() {
                   className="relative z-[4] w-[460px] h-[580px] flex justify-center items-end pointer-events-none"
                 >
                   <img 
-                    src="/profile2.png" 
+                    src={"/profile6.png"} 
                     alt={name} 
                     className="object-contain w-full h-full drop-shadow-xl dark:drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] pointer-events-auto"
                     style={{ WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)', maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)' }}

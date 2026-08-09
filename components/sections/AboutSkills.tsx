@@ -84,7 +84,7 @@ export default function AboutSkills() {
   };
 
   return (
-    <section id="skills" className="py-20 lg:py-32 w-[90%] lg:w-[75%] mx-auto overflow-hidden relative">
+    <section id="skills" className="py-20 -mb-18 lg:py-32 w-[90%] lg:w-[75%] mx-auto overflow-hidden relative">
       <NeuralNetworkBg />
       <MagicContainer 
         className="flex flex-col lg:grid lg:grid-cols-6 lg:grid-rows-3 gap-6 lg:h-[900px] relative z-10" 

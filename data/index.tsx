@@ -210,6 +210,6 @@ export const PORTFOLIO_DATA = {
   ],
   contact: {
     phone: "+91 7558105166",
-    email: "srir42194@gmail.com"
+    email: "srirammurugan1906@gmail.com"
   }
 };

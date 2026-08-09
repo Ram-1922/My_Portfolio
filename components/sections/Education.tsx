@@ -39,7 +39,7 @@ export default function Education() {
   };
 
   return (
-    <section id="education" className="py-20 lg:py-32 w-[90%] lg:w-[75%] mx-auto overflow-visible relative">
+    <section id="education" className="py-20 -m-15 lg:py-32 w-[90%] lg:w-[75%] mx-auto overflow-visible relative">
       <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12 relative items-start">
         
         <div className="w-full lg:col-span-4 lg:col-start-9 lg:order-last h-full relative mb-10 lg:mb-0">

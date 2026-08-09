@@ -6,7 +6,7 @@ import { ExternalLink, Server, GitBranch } from "lucide-react";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 lg:py-32 w-[90%] lg:w-[75%] mx-auto relative flex flex-col lg:flex-row gap-8 lg:gap-20 items-start">
+    <section id="projects" className="py-20 -mb-18 lg:py-32 w-[90%] lg:w-[75%] mx-auto relative flex flex-col lg:flex-row gap-8 lg:gap-20 items-start">
 
       <div className="w-full lg:w-1/3 relative lg:sticky lg:top-32 z-10 text-left mb-4 lg:mb-0">
         <motion.div
@@ -61,23 +61,27 @@ export default function Projects() {
                 <div className="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-5 pt-5 border-t border-[#0fbcff]/20 dark:border-white/10 mt-auto shrink-0 w-full">
                   <div className="flex flex-wrap gap-2 lg:gap-3">
                     {project.stack.map((tech, tIdx) => (
-                      <span key={tIdx} className="font-mono text-[10px] sm:text-xs lg:text-sm font-bold px-2.5 py-1 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 bg-[#0fbcff]/10 text-[#0fbcff] rounded-lg lg:rounded-xl border border-[#0fbcff]/20 whitespace-nowrap">
+                      <span key={tIdx} className="font-mono text-[10px] sm:text-xs lg:text-sm font-medium px-2.5 py-1 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 bg-black/5 dark:bg-white/5 text-slate-600 dark:text-slate-400 rounded-lg lg:rounded-xl border border-black/10 dark:border-white/10 whitespace-nowrap">
                         {tech}
                       </span>
                     ))}
                   </div>
 
                   <div className="flex flex-row flex-wrap gap-3 shrink-0 mt-2 xl:mt-0 w-full xl:w-auto">
+                    
+                    {/* ENHANCED SRC_CODE BUTTON WITH NEON SWEEP */}
                     <a 
                       href={project.github || "#"} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="flex-1 xl:flex-none group flex items-center justify-center gap-1.5 lg:gap-2 px-3 lg:px-5 py-2 lg:py-2.5 rounded-md bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/30 text-purple-700 dark:text-purple-400 font-mono text-[10px] lg:text-xs font-bold hover:bg-purple-100 dark:hover:bg-purple-500/20 hover:border-purple-300 dark:hover:border-purple-500/50 transition-all shadow-[0_0_15px_rgba(168,85,247,0.05)] w-auto"
+                      className="flex-1 xl:flex-none group relative flex items-center justify-center gap-1.5 lg:gap-2 px-3 lg:px-5 py-2 lg:py-2.5 rounded-md bg-purple-50/50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/30 text-purple-700 dark:text-purple-400 font-mono text-[10px] lg:text-xs font-bold transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.05)] w-auto overflow-hidden hover:-translate-y-1 hover:border-purple-400 dark:hover:border-purple-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] dark:hover:shadow-[0_0_25px_rgba(168,85,247,0.8),inset_0_0_12px_rgba(168,85,247,0.5)] z-10"
                     >
-                      <GitBranch className="w-3 h-3 lg:w-4 lg:h-4 text-purple-500 dark:text-purple-400 group-hover:text-purple-800 dark:group-hover:text-purple-300 transition-colors" /> 
-                      <span>src_code</span>
+                      <div className="absolute inset-0 -translate-x-full w-[200%] bg-gradient-to-r from-transparent via-purple-400/20 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full z-0" />
+                      <GitBranch className="w-3 h-3 lg:w-4 lg:h-4 text-purple-500 dark:text-purple-400 group-hover:text-purple-800 dark:group-hover:text-purple-300 transition-colors relative z-10 drop-shadow-md" /> 
+                      <span className="relative z-10">src_code</span>
                     </a>
 
+                    {/* ENHANCED LIVE BUTTON WITH NEON SWEEP */}
                     <a 
                       href={isLiveAvailable ? project.live : "#"} 
                       target={isLiveAvailable ? "_blank" : undefined} 
@@ -89,15 +93,19 @@ export default function Projects() {
                           alert("Status: Offline.\nThe live deployment for this project will be available soon.");
                         }
                       }}
-                      className={`flex-1 xl:flex-none group relative flex items-center justify-center gap-1.5 lg:gap-2 px-3 lg:px-5 py-2 lg:py-2.5 rounded-md font-mono text-[10px] lg:text-xs font-bold transition-all w-auto overflow-hidden
+                      className={`flex-1 xl:flex-none group relative flex items-center justify-center gap-1.5 lg:gap-2 px-3 lg:px-5 py-2 lg:py-2.5 rounded-md font-mono text-[10px] lg:text-xs font-bold transition-all duration-300 w-auto overflow-hidden z-10
                         ${isLiveAvailable 
-                          ? "bg-blue-50 dark:bg-blue-500/10 border-blue-200 dark:border-blue-500/30 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-500/20 hover:border-blue-300 dark:hover:border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.15)]" 
-                          : "bg-slate-50 dark:bg-slate-500/10 border-slate-200 dark:border-slate-500/30 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-500/20 cursor-not-allowed"}
+                          ? "bg-blue-50/50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 text-blue-600 dark:text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.15)] hover:-translate-y-1 hover:border-blue-400 dark:hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] dark:hover:shadow-[0_0_25px_rgba(59,130,246,0.8),inset_0_0_12px_rgba(59,130,246,0.5)]" 
+                          : "bg-slate-50 dark:bg-slate-500/10 border border-slate-200 dark:border-slate-500/30 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-500/20 cursor-not-allowed"}
                       `}
                     >
-                      <span className="relative flex h-2 w-2 lg:h-2.5 lg:w-2.5">
-                        <span className={`absolute inline-flex h-full w-full rounded-full opacity-75 ${isLiveAvailable ? 'animate-ping bg-blue-400' : 'bg-slate-400'}`}></span>
-                        <span className={`relative inline-flex rounded-full h-2 w-2 lg:h-2.5 lg:w-2.5 ${isLiveAvailable ? 'bg-blue-500' : 'bg-slate-500'}`}></span>
+                      {isLiveAvailable && (
+                        <div className="absolute inset-0 -translate-x-full w-[200%] bg-gradient-to-r from-transparent via-blue-400/20 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full z-0" />
+                      )}
+                      
+                      <span className="relative flex h-2 w-2 lg:h-2.5 lg:w-2.5 z-10">
+                        <span className={`absolute inline-flex h-full w-full rounded-full opacity-75 transition-all duration-300 ${isLiveAvailable ? 'animate-ping bg-blue-400 drop-shadow-[0_0_8px_rgba(59,130,246,1)]' : 'bg-slate-400'}`}></span>
+                        <span className={`relative inline-flex rounded-full h-2 w-2 lg:h-2.5 lg:w-2.5 transition-all duration-300 ${isLiveAvailable ? 'bg-blue-500 drop-shadow-[0_0_5px_rgba(59,130,246,0.8)] group-hover:bg-blue-400' : 'bg-slate-500'}`}></span>
                       </span>
                       <span className="relative z-10">Live</span>
                     </a>
