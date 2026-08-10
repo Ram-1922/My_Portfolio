@@ -15,7 +15,7 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ type: "spring", bounce: 0.4 }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-heading font-black mb-4 text-slate-900 dark:text-white leading-tight">Featured Work</h2>
+          <h2 className="text-4xl sm:text-4xl lg:text-6xl font-heading font-black mb-4 text-slate-900 dark:text-white leading-tight">Featured Work</h2>
           <p className="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-gray-400 font-medium leading-relaxed">
             Selected projects demonstrating AI integration, intelligent state management, and full-stack architecture.
           </p>

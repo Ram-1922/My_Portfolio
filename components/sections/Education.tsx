@@ -44,7 +44,7 @@ export default function Education() {
         
         <div className="w-full lg:col-span-4 lg:col-start-9 lg:order-last h-full relative mb-10 lg:mb-0">
           <div className="sticky top-24 lg:top-32 flex flex-col items-start lg:items-end text-left lg:text-right mb-0">
-            <h2 className="text-4xl lg:text-6xl font-heading font-black text-slate-900 dark:text-white flex items-center gap-4 mb-2">
+            <h2 className="text-4xl lg:text-5xl font-heading font-black text-slate-900 dark:text-white flex items-center gap-4 mb-2">
               Education
             </h2>
             <p className="font-mono text-xs lg:text-sm text-sky-500 uppercase tracking-widest mt-2 font-bold">
