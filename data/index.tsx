@@ -3,10 +3,8 @@ import { Trophy, Medal, Award, CheckCircle, Rocket, FileBadge } from "lucide-rea
 
 // 1. HERO ROLES
 export const HERO_ROLES = [
-  "Aspiring Full-Stack Developer",
-  "UI/UX Designer",
-  "Front-end Developer",
-  "Python Developer",
+  "Full-Stack Developer",
+  "Aspiring Software Developer",
   "Editor"
 ];
 
