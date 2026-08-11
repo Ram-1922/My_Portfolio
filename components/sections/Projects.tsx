@@ -6,7 +6,7 @@ import { ExternalLink, Server, GitBranch } from "lucide-react";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 -mb-18 lg:py-32 w-[90%] lg:w-[75%] mx-auto relative flex flex-col lg:flex-row gap-8 lg:gap-20 items-start">
+    <section id="projects" className="py-20 select-none -mb-18 lg:py-32 w-[90%] lg:w-[75%] mx-auto relative flex flex-col lg:flex-row gap-8 lg:gap-20 items-start">
 
       <div className="w-full lg:w-1/3 relative lg:sticky lg:top-32 z-10 text-left mb-4 lg:mb-0">
         <motion.div
@@ -41,14 +41,14 @@ export default function Projects() {
                 <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-[#0fbcff]/40 to-[#0fbcff]/30 dark:from-[#0fbcff]/15 dark:to-[#0fbcff]/15 rounded-full blur-[100px] group-hover:scale-125 transition-transform duration-700 -z-10" />
 
                 <div className="flex flex-col mb-8 lg:mb-0">
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold mb-3 text-slate-900 dark:text-white group-hover:text-[#0fbcff] dark:group-hover:text-[#0fbcff] transition-colors leading-tight">
+                  <h3 className="text-2xl select-text sm:text-3xl lg:text-4xl font-heading font-bold mb-3 text-slate-900 dark:text-white group-hover:text-[#0fbcff] dark:group-hover:text-[#0fbcff] transition-colors leading-tight">
                     {project.title}
                   </h3>
-                  <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-gray-300 mb-5 leading-relaxed max-w-3xl font-medium">
+                  <p className="text-sm select-text sm:text-base lg:text-lg text-slate-600 dark:text-gray-300 mb-5 leading-relaxed max-w-3xl font-medium">
                     {project.description}
                   </p>
 
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mb-3">
+                  <ul className="grid select-text grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mb-3">
                     {project.features.map((feature, fIdx) => (
                       <li key={fIdx} className="flex items-start lg:items-center text-xs sm:text-sm lg:text-base text-slate-700 dark:text-gray-300 gap-3 font-medium bg-[#0fbcff]/10 dark:bg-white/5 p-3 rounded-xl lg:rounded-2xl border border-[#0fbcff]/20 dark:border-white/5">
                         <span className="w-1.5 h-1.5 lg:w-2 lg:h-2 mt-1.5 lg:mt-0 shrink-0 rounded-full bg-[#0fbcff] shadow-[0_0_10px_rgba(15,188,255,0.8)]" />

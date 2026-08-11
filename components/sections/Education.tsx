@@ -44,13 +44,13 @@ export default function Education() {
         
         <div className="w-full lg:col-span-4 lg:col-start-9 lg:order-last h-full relative mb-10 lg:mb-0">
           <div className="sticky top-24 lg:top-32 flex flex-col items-start lg:items-end text-left lg:text-right mb-0">
-            <h2 className="text-4xl lg:text-5xl font-heading font-black text-slate-900 dark:text-white flex items-center gap-4 mb-2">
+            <h2 className="text-4xl select-none lg:text-5xl font-heading font-black text-slate-900 dark:text-white flex items-center gap-4 mb-2">
               Education
             </h2>
-            <p className="font-mono text-xs lg:text-sm text-sky-500 uppercase tracking-widest mt-2 font-bold">
+            <p className="font-mono text-xs select-none lg:text-sm text-sky-500 uppercase tracking-widest mt-2 font-bold">
               // Academic_Background
             </p>
-            <p className="text-slate-600 dark:text-slate-400 text-sm lg:text-base mt-4 max-w-xs">
+            <p className="text-slate-600 select-none dark:text-slate-400 text-sm lg:text-base mt-4 max-w-xs">
               My formal education journey, foundational learning, and degree progression.
             </p>
           </div>

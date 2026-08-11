@@ -113,7 +113,7 @@ export default function AboutSkills() {
             
             <p className="font-mono text-sm text-purple-600 dark:text-purple-400 mb-4 font-bold relative z-10 pointer-events-none">// ABOUT_ME.md</p>
             
-            <div className="space-y-6 text-lg text-slate-700 dark:text-gray-300 font-medium leading-relaxed relative z-10 pointer-events-none pr-6">
+            <div className="space-y-6 select-text text-lg text-slate-700 dark:text-gray-300 font-medium leading-relaxed relative z-10 pointer-events-none pr-6">
               {about.content.map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>
               ))}

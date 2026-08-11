@@ -109,7 +109,7 @@ export default function Marquee() {
 
   return (
     <div 
-      className="w-full overflow-hidden -mb-13 bg-slate-50 dark:bg-[#101012]/95 py-6 md:py-8 border-y border-slate-200 dark:border-purple-500/10 flex whitespace-nowrap cursor-default transition-colors duration-500"
+      className="w-full select-none overflow-hidden -mb-13 bg-slate-50 dark:bg-[#101012]/95 py-6 md:py-8 border-y border-slate-200 dark:border-purple-500/10 flex whitespace-nowrap cursor-default transition-colors duration-500"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

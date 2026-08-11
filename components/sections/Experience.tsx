@@ -44,13 +44,13 @@ export default function Experience() {
         
         <div className="w-full lg:col-span-4 h-full relative mb-10 lg:mb-0">
           <div className="sticky top-24 lg:top-32 flex flex-col items-start text-left mb-0">
-            <h2 className="text-4xl lg:text-5xl font-heading font-black text-slate-900 dark:text-white flex items-center gap-4 mb-2">
+            <h2 className="text-4xl select-none lg:text-5xl font-heading font-black text-slate-900 dark:text-white flex items-center gap-4 mb-2">
               Experience
             </h2>
-            <p className="font-mono text-xs lg:text-sm text-purple-500 uppercase tracking-widest mt-2 font-bold">
+            <p className="font-mono text-xs select-none lg:text-sm text-purple-500 uppercase tracking-widest mt-2 font-bold">
               // Work_History
             </p>
-            <p className="text-slate-600 dark:text-slate-400 text-sm lg:text-base mt-4 max-w-xs">
+            <p className="text-slate-600 select-none dark:text-slate-400 text-sm lg:text-base mt-4 max-w-xs">
               A chronological timeline of my professional experience, internships, and technical learning.
             </p>
           </div>

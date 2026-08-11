@@ -24,7 +24,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[100dvh] py-5 w-full flex items-center justify-center overflow-hidden px-6 md:px-12 lg:px-24 transition-colors duration-500 bg-white dark:bg-[#030305]">
+    <section className="relative min-h-[100dvh] select-none py-5 w-full flex items-center justify-center overflow-hidden px-6 md:px-12 lg:px-24 transition-colors duration-500 bg-white dark:bg-[#030305]">
 
       {mounted && resolvedTheme === 'dark' && (
         <div className="absolute inset-0 z-[1] pointer-events-none opacity-100 transition-opacity duration-500 block">
@@ -137,7 +137,7 @@ export default function Hero() {
               {/* MOBILE: Static "Hovered" State - No interactions */}
               <div className="flex lg:hidden relative w-full h-full justify-center items-center scale-[0.45] sm:scale-[0.75] origin-center">
                 <div
-                  className="absolute w-[clamp(180px,min(45vw,35dvh),270px)] h-[clamp(180px,min(45vw,35dvh),270px)] rounded-full border-[clamp(12px,min(3vw,2dvh),20px)] z-[2]"
+                  className="absolute w-[clamp(280px,min(45vw,35dvh),370px)] h-[clamp(280px,min(45vw,35dvh),370px)] rounded-full border-[clamp(12px,min(3vw,2dvh),20px)] z-[2]"
                   style={{
                     borderColor: "rgba(59,130,246,1)",
                     boxShadow: "0 0 30px rgba(59,130,246,0.4), inset 0 0 30px rgba(59,130,246,0.4)"
@@ -179,7 +179,7 @@ export default function Hero() {
                     hover: { scale: 1, opacity: 1, borderColor: "rgba(59,130,246,1)", boxShadow: "0 0 30px rgba(59,130,246,0.4), inset 0 0 30px rgba(59,130,246,0.4)" }
                   }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="absolute w-[400px] h-[400px] rounded-full border-[20px] z-[2] transition-colors duration-500"
+                  className="absolute w-[clamp(200px,min(22vw,35dvh),400px)] h-[clamp(200px,min(22vw,35dvh),400px)] rounded-full border-[clamp(10px,min(1.5vw,2dvh),20px)] z-[2] transition-colors duration-500"
                   style={{ borderColor: resolvedTheme === 'dark' ? "rgba(59,130,246,0.5)" : "rgba(59,130,246,0.2)" }}
                 />
                 <motion.div
@@ -188,7 +188,7 @@ export default function Hero() {
                     hover: { x: 10, opacity: 1, textShadow: "0 0 20px rgba(59,130,246,0.8)", scale: 1.1 }
                   }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="absolute top-[25%] left-0 text-[90px] font-mono font-light text-transparent select-none z-[3] transition-colors duration-500"
+                  className="absolute top-[25%] -left-5 text-[clamp(50px,min(15vw,10dvh),90px)] font-mono font-light text-transparent select-none z-[3] transition-colors duration-500"
                   style={{ WebkitTextStroke: resolvedTheme === 'dark' ? "2px rgba(96,165,250,0.8)" : "2px rgba(59,130,246,0.6)" }}
                 >
                   {'<'}
@@ -199,7 +199,7 @@ export default function Hero() {
                     hover: { x: -10, opacity: 1, textShadow: "0 0 20px rgba(59,130,246,0.8)", scale: 1.1 }
                   }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="absolute bottom-[25%] right-0 text-[90px] font-mono font-light text-transparent select-none z-[3] transition-colors duration-500"
+                  className="absolute bottom-[25%] -right-5 text-[clamp(50px,min(15vw,10dvh),90px)] font-mono font-light text-transparent select-none z-[3] transition-colors duration-500"
                   style={{ WebkitTextStroke: resolvedTheme === 'dark' ? "2px rgba(96,165,250,0.8)" : "2px rgba(59,130,246,0.6)" }}
                 >
                   {'>'}

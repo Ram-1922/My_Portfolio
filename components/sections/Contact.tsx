@@ -54,7 +54,7 @@ export default function ExperienceContact() {
   };
 
   return (
-    <section id="resume-contact" className="py-20 -mb-20 lg:py-32 px-6 w-full lg:w-[85%] xl:w-[75%] mx-auto transition-colors duration-500">
+    <section id="resume-contact"  className="py-20 select-none -mb-20 lg:py-32 px-6 w-full lg:w-[85%] xl:w-[75%] mx-auto transition-colors duration-500">
 
       <div className="mb-10 flex flex-col items-start text-left">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
@@ -141,7 +141,7 @@ export default function ExperienceContact() {
                     <span className="text-slate-400">{`{`}</span><br />
                     &nbsp;&nbsp;<span className="text-sky-500">"status"</span><span className="text-slate-400">: </span><span className="text-emerald-500">200</span>,<br />
                     &nbsp;&nbsp;<span className="text-sky-500">"contact"</span><span className="text-slate-400">: {`{`}</span><br />
-                    <div className="pl-4 sm:pl-6">
+                    <div className="pl-4 select-text sm:pl-6">
                       <span className="text-purple-500">"email"</span><span className="text-slate-400">: </span><a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${contact.email}`} className="text-amber-500 hover:underline break-all sm:break-normal">"{contact.email}"</a>,<br />
                       <span className="text-purple-500">"phone"</span><span className="text-slate-400">: </span><a href={`tel:${contact.phone.replace(/\s+/g, '')}`} className="text-amber-500 hover:underline">"{contact.phone}"</a><br />
                     </div>

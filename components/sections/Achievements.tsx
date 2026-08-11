@@ -17,13 +17,13 @@ export default function Achievements() {
           transition={{ type: "spring", bounce: 0.4 }}
           className="text-left lg:text-right"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-[clamp(2.5rem,4vw,3.5rem)] font-heading font-black mb-3 lg:mb-4 text-slate-900 dark:text-white flex flex-row lg:flex-row-reverse items-center justify-start gap-4 leading-tight">
+          <h2 className="text-4xl select-none sm:text-5xl lg:text-[clamp(2.5rem,4vw,3.5rem)] font-heading font-black mb-3 lg:mb-4 text-slate-900 dark:text-white flex flex-row lg:flex-row-reverse items-center justify-start gap-4 leading-tight">
             Achievements
           </h2>
-          <p className="font-mono text-xs sm:text-sm text-sky-600 dark:text-sky-400 uppercase tracking-widest font-bold mb-4">
+          <p className="font-mono select-none text-xs sm:text-sm text-sky-600 dark:text-sky-400 uppercase tracking-widest font-bold mb-4">
             // Milestones_&_Honors
           </p>
-          <p className="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-gray-400 font-medium leading-relaxed">
+          <p className="text-base select-none sm:text-lg lg:text-xl text-slate-600 dark:text-gray-400 font-medium leading-relaxed">
             A chronological timeline of competition victories, hackathon milestones, and continuous technical growth.
           </p>
         </motion.div>
