@@ -174,8 +174,8 @@ export const PORTFOLIO_DATA = {
     ]
   },
   skills: {
-    frontend: ["ReactJS", "UI/UX Designer", "Front-end Web Developer", "HTML/CSS/JS", "Tailwind css"],
-    backend: ["Node.js", "Express.js", "Puppeteer"],
+    frontend: ["ReactJS", "UI/UX", "Front-end Web Developer", "HTML/CSS/JS"],
+    backend: ["Node.js", "FastAPI"],
     ai: ["Git","Github","Vscode","Gemini API", "Ollama", "AI Agents"],
     dbms: SKILLS_DBMS,
     tools: SKILLS_TOOLS
