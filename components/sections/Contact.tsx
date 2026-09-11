@@ -105,7 +105,7 @@ export default function ExperienceContact() {
             </dialog>
 
             <div className="w-full flex-1 min-h-[clamp(100px,20dvh,200px)] bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl relative overflow-hidden flex items-center justify-center group-hover:border-purple-300 dark:group-hover:border-purple-500/30 transition-colors duration-500 mb-4">
-              <img src="/Sri_Ram_M_Resume.png" alt="Resume Blurred" className="absolute inset-0 w-full h-full object-cover object-top blur-[2px] opacity-70 dark:opacity-50 transition-all duration-500 group-hover:scale-105 group-hover:blur-md" />
+              <img src="/Sri_Ram_M.png" alt="Resume Blurred" className="absolute inset-0 w-full h-full object-cover object-top blur-[2px] opacity-70 dark:opacity-50 transition-all duration-500 group-hover:scale-105 group-hover:blur-md" />
               <span className="absolute inset-0 bg-white/20 dark:bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
                 <button onClick={openModal} className="flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-black px-3 py-1.5 lg:px-4 lg:py-2 rounded-lg text-xs lg:text-sm font-bold hover:scale-105 transition-transform shadow-xl">
                   <Eye className="w-4 h-4" /> Preview File
@@ -113,7 +113,7 @@ export default function ExperienceContact() {
               </span>
             </div>
 
-            <a href="/Sri_Ram_M_Resume.pdf" download className="flex items-center justify-center gap-2 w-full py-2.5 lg:py-3 bg-purple-600 hover:bg-purple-500 text-white text-xs lg:text-sm font-bold rounded-lg transition-colors shadow-lg shadow-purple-500/25">
+            <a href="/Sri_Ram_M.pdf" download className="flex items-center justify-center gap-2 w-full py-2.5 lg:py-3 bg-purple-600 hover:bg-purple-500 text-white text-xs lg:text-sm font-bold rounded-lg transition-colors shadow-lg shadow-purple-500/25">
               <Download className="w-4 h-4" /> Download Resume
             </a>
           </div>
