@@ -96,7 +96,7 @@ export default function ExperienceContact() {
                 </div>
                 <div className="flex-1 w-full h-full bg-slate-800 p-2 lg:p-4">
                   <iframe
-                    src="/Sri_Ram_M_Resume.pdf#toolbar=0"
+                    src="/Sri_Ram_M.pdf#toolbar=0"
                     className="w-full h-full rounded-lg border border-slate-700 bg-white"
                     title="Resume Preview"
                   />
